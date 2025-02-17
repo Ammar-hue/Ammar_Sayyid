@@ -251,7 +251,8 @@ def menambah_daftar_gudang():
             if simpan_barang == 'ya':
                 daftar_gudang_electroHub.append(barang_baru)
                 print(f"Barang {menambah_nama_barang} berhasil ditambahkan")
-                break
+                create_menu()
+                return
             elif simpan_barang == 'tidak':
                 break
             else:
@@ -271,8 +272,10 @@ def menghapus_daftar_gudang():
                 if hapus_data == 'ya':
                     daftar_gudang_electroHub.remove(item)
                     print(f"\n ~~~ Barang dengan id ({id_barang}) berhasil dihapus ~~~")
+                    delete_menu()
                     return
                 elif hapus_data == 'tidak':
+                    print("\n~~~ Hapus barang dibatalkan ~~~")
                     break
                 else:
                     print("Input tidak valid. mohon ketik ulang (ya/tidak)")
@@ -280,6 +283,7 @@ def menghapus_daftar_gudang():
                     return 
         
         print("Id barang tidak valid.")
+        delete_menu()
         return
 
 #====================================================================================================
@@ -474,7 +478,6 @@ def delete_menu():
                 print("Input tidak valid, masukkan angka 1/2")
         except ValueError:
             print("Masukkan angka yang valid")
-            delete_menu()
             return
 
 #====================================================================================================
