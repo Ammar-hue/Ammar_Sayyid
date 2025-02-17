@@ -472,7 +472,6 @@ def delete_menu():
             if pilihan_menu == 1:
                 menghapus_daftar_gudang()
             elif pilihan_menu == 2:
-                delete_menu()
                 return
             else:
                 print("Input tidak valid, masukkan angka 1/2")
